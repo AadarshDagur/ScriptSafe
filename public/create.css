@@ -1,0 +1,86 @@
+.gradient-background {
+    background: linear-gradient(300deg, #4e54c8, #8f94fb, #4e54c8);
+    background-size: 180% 180%;
+    animation: gradient-animation 8s ease-in-out infinite;
+  }
+  
+  
+@keyframes gradient-animation {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+
+
+.heading{
+    margin:3%;
+    text-align: center;
+    font-size: 2rem;
+    font-weight: bold;
+    color: black;
+}
+
+.label{
+    color: grey;
+    margin: 1%;
+    font-weight: lighter;
+}
+
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 50%;
+    }
+
+.credentials{
+    display: flex;
+    flex-direction: column;
+    border: 4px solid grey;
+    border-radius: 5%;
+    padding: 3%;
+    margin: 5%;
+}
+.submit{
+    width: 100%;
+    text-align: center;
+    margin:2% 0 5% 0;
+}
+.name{
+    height: 100%;
+    padding: 1%;
+}
+.number{
+    padding:2%;
+}
+.details{
+    padding: 3%;
+}
+.bio{
+    padding: 5%;
+    margin-bottom: 0;
+}
+button{
+    background-color: rgb(13, 110, 253);
+    color: white;
+    border: 0;
+    border-radius: 10%;
+    padding:2% 3% 2% 3%;
+}
+footer{
+    text-align: center;
+    margin-top: 5%;
+    color: #fff;
+}

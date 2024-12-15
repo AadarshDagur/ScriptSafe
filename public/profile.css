@@ -1,0 +1,215 @@
+/* Gradient Background */
+.gradient-background {
+    background: linear-gradient(300deg, #4e54c8, #8f94fb, #4e54c8);
+    background-size: 180% 180%;
+    animation: gradient-animation 18s ease infinite;
+}
+
+/* Keyframes for Gradient Animation */
+@keyframes gradient-animation {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* Body Styling */
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: white;
+    min-height: 100vh;
+}
+
+/* Container for Profile and Notes */
+.container {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    padding: 30px 40px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    width: 100%;
+    max-width: 450px;
+    margin-top: 50px;
+}
+
+/* Header Styles */
+h1 {
+    color: black;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Profile Info */
+
+div.fname, div.lname, div.dob, div.number, div.details, div.bio {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+    border-bottom: 1px solid #ddd;
+}
+
+label {
+    font-weight: bold;
+    color: #333;
+}
+
+span {
+    color: #666;
+}
+
+/* Styling the Buttons */
+.buttons {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+form {
+    margin: 3% 2%;
+    width: auto;
+    text-align: center;
+}
+
+#editButton {
+    background-color: green;
+}
+
+#logoutButton {
+    background-color: red;
+}
+
+#editButton, #logoutButton {
+    color: white;
+    font-size: 1.2rem;
+    border: 0;
+    border-radius: 10%;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+/* Hover Effects for Buttons */
+#editButton:hover, #logoutButton:hover {
+    opacity: 0.8;
+}
+
+/* Notes Section */
+.container .notes {
+    margin-top: 30px;
+    padding: 10px;
+}
+
+.container .notes h3 {
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.container .notes ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.container .notes li {
+    background-color: rgba(255, 255, 255, 0.6);
+    margin: 10px 0;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Add New Note Section */
+.add-note {
+    margin-top: 30px;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.7);
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.add-note h3 {
+    margin-bottom: 15px;
+    color: #333;
+}
+
+textarea#newNote {
+    width: 100%;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+    margin-bottom: 10px;
+    resize: vertical;
+    height: 120px;
+}
+
+input#noteTitle {
+    width: 100%;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+    margin-bottom: 10px;
+}
+
+button#addNoteButton {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    width: 100%;
+}
+
+button#addNoteButton:hover {
+    opacity: 0.8;
+}
+
+.container .notes li {
+    word-wrap: break-word; /* Break long words */
+    overflow-wrap: break-word; /* Ensure compatibility with modern browsers */
+    background-color: rgba(255, 255, 255, 0.6);
+    margin: 10px 0;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+.deleteButton {
+    background-color: red;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    margin-top: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.deleteButton:hover {
+    background-color: darkred;
+}
+
+
+/* Footer Styling */
+footer {
+    margin-top: 50px;
+    text-align: center;
+    font-size: 1rem;
+    color: #333;
+}
+
+footer span {
+    color: #e25555;
+}

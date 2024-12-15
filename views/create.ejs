@@ -1,0 +1,43 @@
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Create Profile</title>
+        <link rel="stylesheet" href="create.css">
+    </head>
+
+    <body class="gradient-background">
+        <p class="heading"><%= create %> PROFILE</p>
+        <div class="container">
+        <form action="/submit" method="post">
+            <div class="credentials">
+                <label for="firstName">First Name:</label>
+                <input class="name" type="text" id="firstName" name="firstName" value="<%= profileData.fname ? profileData.fname : '' %>" placeholder="First Name" required><br><br>
+
+                <label for="lastName">Last Name:</label>
+                <input class="name" type="text" id="lastName" name="lastName" value="<%= profileData.lname ? profileData.lname : '' %>" placeholder="Last Name" required><br><br>
+
+                <label for="dob">Date of Birth:</label>
+                <input class="dob" type="date" id="dob" name="dob" value="<%= profileData.dob ? profileData.dob : '' %>" placeholder="Date of Birth" required><br>
+
+                <label for="mobileNumber">Mobile Number:</label>
+                <input class="number" type="tel" id="mobileNumber" name="mobileNumber" value="<%= profileData.number ? profileData.number : '' %>" placeholder="Mobile Number" required><br><br>
+
+                <label for="educationDetails">College:</label>
+                <textarea class="details" id="educationDetails" name="educationDetails" placeholder="College" required><%= profileData.details ? profileData.details : '' %></textarea><br><br>
+
+            </div>
+            <div class="submit">
+                <button type="submit">Submit</button>
+            </div>
+        </form>
+        </div>
+        <script>
+            // Get the data passed from index.js
+            const profileData = JSON.parse('<%- JSON.stringify(profileData) %>');
+            
+        </script>
+        <footer>
+            <p>Made with <span>❤️</span> by Adarsh</p>
+        </footer>
+    </body>
+</html>

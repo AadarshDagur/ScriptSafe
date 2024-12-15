@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Profile Page</title>
+    <link rel="stylesheet" href="profile.css">
+</head>
+<body class="gradient-background">
+    <div class="container">
+        <h1>Welcome, <%= profileData.fname %>!</h1><br>
+        <div class="fname">
+            <label for="fname">First Name:</label>
+            <span id="fname"><%= profileData.fname %></span>
+        </div>
+        <div class="lname">
+            <label for="lname">Last Name:</label>
+            <span id="lname"><%= profileData.lname %></span>
+        </div>
+        <div class="dob">
+            <label for="dob">Date of Birth:</label>
+            <span id="dob"><%= profileData.dob %></span>
+        </div>
+        <div class="number">
+            <label for="number">Phone Number:</label>
+            <span id="number"><%= profileData.number %></span>
+        </div>
+        <div class="details">
+            <label for="education">College:</label>
+            <span id="education"><%= profileData.details %></span>
+        </div>
+        <div class="buttons">
+            <form action="/create"> 
+                <button type="submit" id="editButton">Edit</button>
+            </form>
+            <form action="/logout">
+                <button type="submit" id="logoutButton">Logout</button>
+            </form> 
+        </div>
+    </div>
+
+    <script>
+        // Get the data passed from index.js
+        const profileData = JSON.parse('<%- JSON.stringify(profileData) %>');
+    </script>
+    <div class="container">
+        <h1>Your Notes</h1>
+        <div class="notes">
+            <ul>
+                <% notes.forEach(note => { %>
+                    <li>
+                        <h3><%= note.title %></h3><br>
+                        <%= note.note %>
+                        <!-- Add delete button for each note -->
+                        <form action="/deleteNote" method="POST" style="display: inline;">
+                            <input type="hidden" name="noteId" value="<%= note.id %>">
+                            <button type="submit" class="deleteButton">Delete</button>
+                        </form>
+                    </li>
+                <% }) %>
+            </ul>
+        </div>
+
+        <!-- Add new note section -->
+        <div class="add-note">
+            <h3>Add a New Note</h3> 
+            <form action="/addNote" method="POST">
+                <input type="text" id="noteTitle" name="noteTitle" placeholder="Note Title..." required>
+                <br>
+                <textarea name="newNote" id="newNote" rows="4" cols="50" placeholder="Write your new note here..."></textarea>
+                <br>
+                <button type="submit" id="addNoteButton">Add Note</button>
+            </form>
+        </div>
+    </div>
+
+    <footer>
+        <p>Made with <span>❤️</span> by Adarsh</p>
+    </footer>
+</body>
+</html>
