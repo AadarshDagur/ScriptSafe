@@ -1,6 +1,8 @@
-# PROFOLIO: User Authentication and Profile Management System
+# SCRIPTSAFE: Secure Digital Profile and Notes Management System
 
-This project is a full-stack web application that enables user authentication and profile management. It integrates secure local and Google OAuth-based authentication, allowing users to register, log in, and manage their profiles. The backend uses Node.js and Express.js, with PostgreSQL as the database.
+ScriptSafe is a full-stack web application that enables secure digital profile management and note-taking. It allows users to create and edit personal profiles, as well as add, view, and manage notes securely. The application uses Google OAuth and Bcrypt Hashing for authentication, integrates PostgreSQL for data storage.
+
+It is also hosted online on https://scriptsafe.onrender.com/ using Render Postgres online database and Web service. Feel free to check it out !!
 
 ---
 
@@ -32,7 +34,7 @@ This project is a full-stack web application that enables user authentication an
 - **Security**: Bcrypt for password hashing, environment variables for configuration
 - **API Integration**: Google OAuth for social login
 
----
+---  
 
 ## Prerequisites
 
@@ -79,5 +81,13 @@ This project is a full-stack web application that enables user authentication an
 -  **Home Page**: View the landing page at /
 -  **Register**: Create a new user account at /register.
 -  **Login**: Access your account via /login.
--  **Profile**: Manage your profile details at /profile (requires authentication).
+-  **Profile**: Manage your profile details and Notes at /profile (requires authentication).
 -  **Google Login**: Authenticate using Google via /auth/google.
+
+---
+
+## NOTE: If you want to use Google oAuth while hosting locally, follow given steps:
+1. Set up Google oAuth Credentials on https://console.cloud.google.com/
+2. Enter your generated Client id and Client Secret in .env file.
+3. In index.js change callback URL from http://scriptsafe.onrender.com/auth/google/profile to http://localhost:3000/auth/google/profile
+
