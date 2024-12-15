@@ -172,7 +172,6 @@ app.post("/addnote", async(req, res) => {
     await db.query("INSERT INTO notes (user_id, title, note) VALUES ($1, $2, $3)",[user_id, req.body.noteTitle, req.body.newNote]);
     const result = await db.query("SELECT * FROM notes WHERE user_id=($1)",[user_id]);
     notes = result.rows;
-    console.log(notes);
     res.redirect("/profile");
   } else {
       res.redirect("/login");
